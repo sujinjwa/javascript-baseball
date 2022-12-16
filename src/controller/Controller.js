@@ -10,6 +10,7 @@ class Controller {
     this.gameMachine = new GameMachine();
     this.player;
   }
+
   init() {
     OutputView.printMessage(MESSAGE.gameStart);
 

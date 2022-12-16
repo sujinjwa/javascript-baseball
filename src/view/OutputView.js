@@ -14,19 +14,11 @@ const OutputView = {
 
   printHint(game) {
     const HINTS = game.getHint();
-    if (HINTS.ball > ZERO) {
-      if (HINTS.strike > ZERO) {
-        print(`${BALL(HINTS.ball)} ${STRIKE(HINTS.strike)}`);
-        return;
-      }
-      print(BALL(HINTS.ball));
-      return;
-    }
-    if (HINTS.nothing === ANSWER_LENGTH) {
-      print(NOTHING);
-      return;
-    }
-    print(STRIKE(HINTS.strike));
+    if (HINTS.nothing === ANSWER_LENGTH) return print(NOTHING);
+    if (HINTS.ball === ZERO) return print(STRIKE(HINTS.strike));
+    if (HINTS.strike === ZERO) return print(BALL(HINTS.ball));
+
+    return print(`${BALL(HINTS.ball)} ${STRIKE(HINTS.strike)}`);
   },
 };
 

@@ -1,7 +1,6 @@
 const AnswerMaker = require('../AnswerMaker');
 const Validation = require('../utils/Validation');
 const { ANSWER_LENGTH } = require('../utils/constants');
-const Player = require('./Player');
 
 class GameMachine {
   #answer = [];
