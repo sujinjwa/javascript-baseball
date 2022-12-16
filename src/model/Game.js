@@ -43,7 +43,11 @@ class Game {
     return false;
   }
 
-  validateCommand(command) {}
+  validateCommand(command) {
+    Validation.checkBlank(command);
+    Validation.checkNumberType(command);
+    Validation.checkValidCommand(command);
+  }
 }
 
 module.exports = Game;

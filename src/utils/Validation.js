@@ -3,6 +3,8 @@ const {
   ZERO,
   ANSWER_LENGTH,
   ANSWER_RANGE,
+  RETRY,
+  QUIT,
 } = require('../utils/constants');
 
 const Validation = {
@@ -36,6 +38,12 @@ const Validation = {
   checkDuplication(input) {
     if (input.length !== new Set(input).size) {
       throw ERROR.mustNotBeDulicated;
+    }
+  },
+
+  checkValidCommand(input) {
+    if (!(input === RETRY || input === QUIT)) {
+      throw ERROR.mustBeValidCommand;
     }
   },
 };
