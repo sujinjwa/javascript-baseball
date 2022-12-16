@@ -13,12 +13,12 @@ const OutputView = {
   },
 
   printHint(game) {
-    const HINTS = game.getHint();
-    if (HINTS.nothing === ANSWER_LENGTH) return print(NOTHING);
-    if (HINTS.ball === ZERO) return print(STRIKE(HINTS.strike));
-    if (HINTS.strike === ZERO) return print(BALL(HINTS.ball));
+    let { ball, nothing, strike } = game.getHint();
+    if (nothing === ANSWER_LENGTH) return print(NOTHING);
+    if (ball === ZERO) return print(STRIKE(strike));
+    if (strike === ZERO) return print(BALL(ball));
 
-    return print(`${BALL(HINTS.ball)} ${STRIKE(HINTS.strike)}`);
+    return print(`${BALL(ball)} ${STRIKE(strike)}`);
   },
 };
 
