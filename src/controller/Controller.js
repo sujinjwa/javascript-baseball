@@ -2,7 +2,8 @@ const OutputView = require('../view/OutputView');
 const InputView = require('../view/InputView');
 const Game = require('../model/Game');
 const Player = require('../model/Player');
-const { MESSAGE } = require('../utils/constants');
+const { MESSAGE, RETRY } = require('../utils/constants');
+const { close } = require('../utils/utils');
 
 class Controller {
   constructor() {
@@ -34,6 +35,7 @@ class Controller {
   }
 
   compareNumbers() {
+    this.game.resetHint();
     this.game.compareAnswerWithNumbers(this.player);
     //console.log(this.game.getHint());
 
@@ -47,24 +49,30 @@ class Controller {
   }
 
   checkSuccess() {
-    if (this.game.isSucceeded()) return this.close();
+    if (this.game.isSucceeded()) return this.retryOrClose();
 
-    this.game.resetHint();
     return this.inputNumbers();
   }
 
-  close() {
-    OutputView.printMessage(MESSAGE.gameClose);
-
-    this.retryOrClose();
-  }
-
   retryOrClose() {
+    OutputView.printMessage(MESSAGE.gameClose);
     InputView.readCommand(this.validateCommand.bind(this));
   }
 
   validateCommand(command) {
     this.game.validateCommand(command);
+
+    this.checkCommand(Number(command));
+  }
+
+  checkCommand(command) {
+    if (command === RETRY) return this.makeAnswer();
+
+    this.close();
+  }
+
+  close() {
+    close();
   }
 }
 
