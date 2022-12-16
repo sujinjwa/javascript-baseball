@@ -22,8 +22,8 @@ const ANSWER_RANGE = Object.freeze({
 
 const BALL = (count) => `${count}볼`;
 const STRIKE = (count) => `${count}스트라이크`;
-const NOTHING = Object.freeze('낫싱');
 
+const NOTHING = Object.freeze('낫싱');
 const ANSWER_LENGTH = Object.freeze(3);
 const ZERO = Object.freeze(0);
 const RETRY = Object.freeze(1);
