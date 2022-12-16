@@ -49,6 +49,7 @@ class Controller {
   checkSuccess() {
     if (this.game.isSucceeded()) return this.close();
 
+    this.game.resetHint();
     return this.inputNumbers();
   }
 
