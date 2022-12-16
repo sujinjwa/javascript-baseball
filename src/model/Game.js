@@ -1,4 +1,5 @@
 const AnswerMaker = require('../AnswerMaker');
+const Validation = require('../utils/Validation');
 const { ANSWER_LENGTH } = require('../utils/constants');
 
 class Game {
@@ -46,7 +47,7 @@ class Game {
   validateCommand(command) {
     Validation.checkBlank(command);
     Validation.checkNumberType(command);
-    Validation.checkValidCommand(command);
+    Validation.checkValidCommand(Number(command));
   }
 }
 
