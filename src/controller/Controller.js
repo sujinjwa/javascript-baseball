@@ -17,7 +17,7 @@ class Controller {
 
   makeAnswer() {
     this.game.setAnswer();
-    //console.log(this.game.getAnswer());
+    console.log(this.game.getAnswer());
 
     this.inputNumbers();
   }
@@ -36,6 +36,12 @@ class Controller {
   compareNumbers() {
     this.game.compareAnswerWithNumbers(this.player);
     //console.log(this.game.getHint());
+
+    this.showHint();
+  }
+
+  showHint() {
+    OutputView.printHint(this.game);
   }
 }
 
