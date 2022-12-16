@@ -20,8 +20,12 @@ const OutputView = {
         return;
       }
       print(BALL(HINTS.ball));
+      return;
     }
-    if (HINTS.nothing === ANSWER_LENGTH) print(NOTHING);
+    if (HINTS.nothing === ANSWER_LENGTH) {
+      print(NOTHING);
+      return;
+    }
     print(STRIKE(HINTS.strike));
   },
 };
