@@ -5,7 +5,7 @@ class Player {
 
   constructor(numbers) {
     this.validate(numbers);
-    this.#numbers = numbers;
+    this.#numbers = this.changeToArray(numbers);
   }
 
   validate(numbers) {
@@ -14,6 +14,14 @@ class Player {
     Validation.checkLength(numbers);
     Validation.checkValidRange(numbers);
     Validation.checkDuplication(numbers);
+  }
+
+  changeToArray(numbers) {
+    return numbers.split('').map((number) => Number(number));
+  }
+
+  getInputtedNumbers() {
+    return this.#numbers;
   }
 }
 
