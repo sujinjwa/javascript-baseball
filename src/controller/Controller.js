@@ -18,7 +18,6 @@ class Controller {
 
   makeAnswer() {
     this.game.setAnswer();
-    console.log(this.game.getAnswer());
 
     this.inputNumbers();
   }
@@ -29,7 +28,6 @@ class Controller {
 
   validateNumbers(numbers) {
     this.player = new Player(numbers);
-    //console.log(this.player.getInputtedNumbers());
 
     this.compareNumbers();
   }
@@ -37,7 +35,6 @@ class Controller {
   compareNumbers() {
     this.game.resetHint();
     this.game.compareAnswerWithNumbers(this.player);
-    //console.log(this.game.getHint());
 
     this.showHint();
   }
