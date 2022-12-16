@@ -2,16 +2,12 @@ const AnswerMaker = require('../AnswerMaker');
 const Validation = require('../utils/Validation');
 const { ANSWER_LENGTH } = require('../utils/constants');
 
-class Game {
+class GameMachine {
   #answer = [];
   #hint = { ball: 0, nothing: 0, strike: 0 };
 
   setAnswer() {
     this.#answer = AnswerMaker.makeAnswer();
-  }
-
-  getAnswer() {
-    return this.#answer;
   }
 
   compareAnswerWithNumbers(player) {
@@ -51,4 +47,4 @@ class Game {
   }
 }
 
-module.exports = Game;
+module.exports = GameMachine;

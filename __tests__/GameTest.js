@@ -1,4 +1,4 @@
-const Game = require('../src/model/Game');
+const GameMachine = require('../src/model/GameMachine');
 
 describe('Game 클래스 테스트', () => {
   test.each([
@@ -11,8 +11,8 @@ describe('Game 클래스 테스트', () => {
     '예외처리 테스트 : 서로 다른 3개의 숫자에 대해 잘못된 입력값을 받은 경우 예외 처리한다',
     (input, expected) => {
       expect(() => {
-        const game = new Game();
-        game.validateCommand(input);
+        const gameMachine = new GameMachine();
+        gameMachine.validateCommand(input);
       }).toThrow(expected);
     }
   );
