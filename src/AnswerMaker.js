@@ -6,9 +6,7 @@ const AnswerMaker = {
     let answer = [];
     while (answer.length !== ANSWER_LENGTH) {
       const NUMBER = RandomNumberMaker.generate();
-      if (answer.includes(NUMBER)) {
-        continue;
-      }
+      if (answer.includes(NUMBER)) continue;
       answer.push(NUMBER);
     }
 
