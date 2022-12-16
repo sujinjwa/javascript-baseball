@@ -42,6 +42,8 @@ class Game {
     }
     return false;
   }
+
+  validateCommand(command) {}
 }
 
 module.exports = Game;

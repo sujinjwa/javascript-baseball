@@ -55,6 +55,16 @@ class Controller {
 
   close() {
     OutputView.printMessage(MESSAGE.gameClose);
+
+    this.retryOrClose();
+  }
+
+  retryOrClose() {
+    InputView.readCommand(this.validateCommand.bind(this));
+  }
+
+  validateCommand(command) {
+    this.game.validateCommand(command);
   }
 }
 

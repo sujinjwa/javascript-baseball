@@ -5,6 +5,10 @@ const InputView = {
   readNumbers(callback) {
     input(MESSAGE.inputNumbers, callback);
   },
+
+  readCommand(callback) {
+    input(MESSAGE.inputCommand, callback);
+  },
 };
 
 module.exports = InputView;
