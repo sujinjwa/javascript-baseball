@@ -1,6 +1,7 @@
 const MESSAGE = Object.freeze({
   gameStart: '숫자 야구 게임을 시작합니다.',
   inputNumbers: '숫자를 입력해주세요 : ',
+  gameClose: '3개의 숫자를 모두 맞히셨습니다! 게임 종료\n',
 });
 
 const ERROR = Object.freeze({

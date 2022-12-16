@@ -1,4 +1,5 @@
 const AnswerMaker = require('../AnswerMaker');
+const { ANSWER_LENGTH } = require('../utils/constants');
 
 class Game {
   #answer = [];
@@ -25,6 +26,13 @@ class Game {
 
   getHint() {
     return this.#hint;
+  }
+
+  isSucceeded() {
+    if (this.#hint.strike === ANSWER_LENGTH) {
+      return true;
+    }
+    return false;
   }
 }
 

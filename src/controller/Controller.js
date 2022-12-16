@@ -42,6 +42,18 @@ class Controller {
 
   showHint() {
     OutputView.printHint(this.game);
+
+    this.checkSuccess();
+  }
+
+  checkSuccess() {
+    if (this.game.isSucceeded()) return this.close();
+
+    return this.inputNumbers();
+  }
+
+  close() {
+    OutputView.printMessage(MESSAGE.gameClose);
   }
 }
 
