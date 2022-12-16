@@ -1,6 +1,6 @@
 const GameMachine = require('../src/model/GameMachine');
 
-describe('Game 클래스 테스트', () => {
+describe('GameMachine 클래스 테스트', () => {
   test.each([
     ['', '[ERROR] 공백입니다. 값을 입력해주세요.'],
     ['음..다시 해볼까?', '[ERROR] 문자, 기호 이외의 숫자를 입력해주세요.'],
